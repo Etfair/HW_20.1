@@ -1,0 +1,57 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Овощи",
+      "description": "Полезное"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Полуфабрикаты",
+      "description": "Замороженные продукты"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Пельмени",
+      "description": "Из индейки",
+      "image": "",
+      "category": "Полуфабрикат",
+      "price": 150,
+      "date_create": "2023-07-01T06:00:00Z",
+      "date_last_fix": "2023-07-07T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Морковь",
+      "description": "Новый урожай",
+      "image": "",
+      "category": "Овощи",
+      "price": 6,
+      "date_create": "2023-07-01T12:00:00Z",
+      "date_last_fix": "2023-07-08T06:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "яблоки",
+      "description": "зеленые",
+      "image": "",
+      "category": "Овощи",
+      "price": 35,
+      "date_create": "2023-07-01T06:00:00Z",
+      "date_last_fix": "2023-07-10T12:00:00Z"
+    }
+  }
+]

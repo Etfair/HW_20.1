@@ -13,6 +13,7 @@ class Command(BaseCommand):
             {'name': 'Сырники', 'description': 'На завтрак', 'category': 'Полуфабрикат', 'price': 75},
             {'name': 'Лук', 'description': 'Новый урожай', 'category': 'Овощи', 'price': 15},
             {'name': 'Перец', 'description': 'Болгарский', 'category': 'Овощи', 'price': 37},
+            {'name': 'яблоки', 'description': 'Сезонные', 'category': 'фрукты', 'price': 31},
         ]
 
         # for product_item in product_list:

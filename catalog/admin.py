@@ -10,7 +10,6 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('pk', 'name',)
 
 
-
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('pk', 'name', 'price', 'category',)

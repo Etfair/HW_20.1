@@ -1,57 +1,91 @@
 [
   {
     "model": "catalog.category",
-    "pk": 1,
+    "pk": 16,
     "fields": {
-      "name": "Овощи",
-      "description": "Полезное"
+      "name": "Заморозка",
+      "description": "Хранить в холодильнике"
     }
   },
   {
     "model": "catalog.category",
-    "pk": 2,
+    "pk": 17,
     "fields": {
-      "name": "Полуфабрикаты",
-      "description": "Замороженные продукты"
+      "name": "Фрукты и овощи",
+      "description": "Новый урожай"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 18,
+    "fields": {
+      "name": "Сладкое",
+      "description": "Выпечка"
     }
   },
   {
     "model": "catalog.product",
-    "pk": 1,
+    "pk": 5,
     "fields": {
       "name": "Пельмени",
-      "description": "Из индейки",
+      "description": "говяжие",
       "image": "",
-      "category": "Полуфабрикат",
-      "price": 150,
-      "date_create": "2023-07-01T06:00:00Z",
-      "date_last_fix": "2023-07-07T00:00:00Z"
+      "category": 16,
+      "price": 33,
+      "date_create": "2023-07-14T17:26:44Z",
+      "date_last_fix": "2023-07-14T17:26:46Z"
     }
   },
   {
     "model": "catalog.product",
-    "pk": 2,
+    "pk": 6,
     "fields": {
-      "name": "Морковь",
-      "description": "Новый урожай",
+      "name": "рыба",
+      "description": "мороженная",
       "image": "",
-      "category": "Овощи",
-      "price": 6,
-      "date_create": "2023-07-01T12:00:00Z",
-      "date_last_fix": "2023-07-08T06:00:00Z"
+      "category": 16,
+      "price": 50,
+      "date_create": "2023-07-14T17:27:06Z",
+      "date_last_fix": "2023-07-14T17:27:07Z"
     }
   },
   {
     "model": "catalog.product",
-    "pk": 3,
+    "pk": 7,
+    "fields": {
+      "name": "вишня",
+      "description": "красная",
+      "image": "",
+      "category": 17,
+      "price": 6,
+      "date_create": "2023-07-14T17:27:28Z",
+      "date_last_fix": "2023-07-14T17:27:29Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
     "fields": {
       "name": "яблоки",
-      "description": "зеленые",
+      "description": "сезонные",
       "image": "",
-      "category": "Овощи",
-      "price": 35,
-      "date_create": "2023-07-01T06:00:00Z",
-      "date_last_fix": "2023-07-10T12:00:00Z"
+      "category": 17,
+      "price": 11,
+      "date_create": "2023-07-14T17:27:45Z",
+      "date_last_fix": "2023-07-14T17:27:47Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "орео",
+      "description": "с шоколадом",
+      "image": "",
+      "category": 18,
+      "price": 15,
+      "date_create": "2023-07-14T17:28:09Z",
+      "date_last_fix": "2023-07-14T17:28:11Z"
     }
   }
 ]

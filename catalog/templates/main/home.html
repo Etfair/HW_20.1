@@ -1,0 +1,23 @@
+{% extends 'main/base.html'%}
+{% load my_tags %}
+{% block context %}
+{% for object in object_list %}
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Продуктовый отдел</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">{{ object.name|title }}</h1>
+                    <h3 class="card-text">{{ object.category }}</h3>
+                    <h2 class="card-text">Цена: {{ object.price }}</h2>
+                    <img class="card-img-top" src="{{ object.image|mediapath }}"
+                    alt=""/>
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">В корзину</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+{% endblock %}

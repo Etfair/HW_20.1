@@ -1,28 +1,34 @@
 from django.core.management import BaseCommand
 
-from catalog.models import Product
+from catalog.models import Category, Product
+import json
 
 
 class Command(BaseCommand):
-
     def handle(self, *args, **options):
-        product_list = [
-            {'name': 'Котлеты', 'description': 'Мясные', 'category': 'Полуфабрикат', 'price': 120},
-            {'name': 'Стейк', 'description': 'Говядина', 'category': 'Полуфабрикат', 'price': 170},
-            {'name': 'Картофель', 'description': 'Новый урожай', 'category': 'Овощи', 'price': 19},
-            {'name': 'Сырники', 'description': 'На завтрак', 'category': 'Полуфабрикат', 'price': 75},
-            {'name': 'Лук', 'description': 'Новый урожай', 'category': 'Овощи', 'price': 15},
-            {'name': 'Перец', 'description': 'Болгарский', 'category': 'Овощи', 'price': 37},
-            {'name': 'яблоки', 'description': 'Сезонные', 'category': 'фрукты', 'price': 31},
-        ]
 
-        # for product_item in product_list:
-        #     Product.objects.create(**product_item)
+        with open('data.json') as file:
+            content = json.load(file)
 
-        product_for_create = []
-        for product_item in product_list:
-            product_for_create.append(
-                Product(**product_item)
-            )
+        categories_for_create = []
+        products_for_create = []
+
+        for data in content:
+            if data['model'] == 'catalog.category':
+                categories_for_create.append(Category(pk=data['pk'],
+                                                      name=data['fields']['name'],
+                                                      description=data['fields']['description']))
+            elif data['model'] == 'catalog.product':
+                products_for_create.append(Product(name=data['fields']['name'],
+                                                   description=data['fields']['description'],
+                                                   image=data['fields']['image'],
+                                                   price=data['fields']['price'],
+                                                   category=data['fields']['category']))
+            else:
+                continue
+
+        Category.objects.all().delete()
+        Category.objects.bulk_create(categories_for_create)
+
         Product.objects.all().delete()
-        Product.objects.bulk_create(product_for_create)
+        Product.objects.bulk_create(products_for_create)

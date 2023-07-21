@@ -1,29 +1,33 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 
 from catalog.models import Product, Category
 
 
-# Create your views here.
+class CategoryListView(ListView):
+    model = Category
+    template_name = 'catalog/includes/category_list.html'
 
 
-def categories(request):
-    context = {
-        'object_list': Category.objects.all()
-    }
-    return render(request, 'main/categories.html', context)
+class HomeListView(ListView):
+    model = Product
+    template_name = 'catalog/includes/home_list.html'
 
 
-def home(request):
-    context = {
-        'object_list': Product.objects.all()
-    }
-    return render(request, 'main/home.html', context)
+class ProductListView(ListView):
+    model = Product
+    template_name = 'catalog/includes/home_list.html'
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(category_id=self.kwargs.get('pk'))
+        return queryset
 
-def categories_product(request, pk):
-    category_item = Category.objects.get(pk=pk)
-    context = {
-        'object_list': Product.objects.filter(category_id=pk),
-        'title': f'Продукты, категории {category_item.name}'
-    }
-    return render(request, 'main/home.html', context)
+    def get_context_data(self, *args, **kwargs):
+        context_data = super().get_context_data(*args, **kwargs)
+
+        category_item = Category.objects.get(pk=self.kwargs.get('pk'))
+        context_data['category_pk'] = category_item.pk,
+        context_data['title'] = f'Продукты, категории {category_item.name}'
+
+        return context_data

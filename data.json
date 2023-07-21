@@ -3,32 +3,32 @@
     "model": "catalog.category",
     "pk": 16,
     "fields": {
-      "name": "Заморозка",
-      "description": "Хранить в холодильнике"
+      "name": "Р—Р°РјРѕСЂРѕР·РєР°",
+      "description": "РҐСЂР°РЅРёС‚СЊ РІ С…РѕР»РѕРґРёР»СЊРЅРёРєРµ"
     }
   },
   {
     "model": "catalog.category",
     "pk": 17,
     "fields": {
-      "name": "Фрукты и овощи",
-      "description": "Новый урожай"
+      "name": "Р¤СЂСѓРєС‚С‹ Рё РѕРІРѕС‰Рё",
+      "description": "РќРѕРІС‹Р№ СѓСЂРѕР¶Р°Р№"
     }
   },
   {
     "model": "catalog.category",
     "pk": 18,
     "fields": {
-      "name": "Сладкое",
-      "description": "Выпечка"
+      "name": "РЎР»Р°РґРєРѕРµ",
+      "description": "Р’С‹РїРµС‡РєР°"
     }
   },
   {
     "model": "catalog.product",
     "pk": 5,
     "fields": {
-      "name": "Пельмени",
-      "description": "говяжие",
+      "name": "РџРµР»СЊРјРµРЅРё",
+      "description": "РіРѕРІСЏР¶РёРµ",
       "image": "",
       "category": 16,
       "price": 33,
@@ -40,8 +40,8 @@
     "model": "catalog.product",
     "pk": 6,
     "fields": {
-      "name": "рыба",
-      "description": "мороженная",
+      "name": "СЂС‹Р±Р°",
+      "description": "РјРѕСЂРѕР¶РµРЅРЅР°СЏ",
       "image": "",
       "category": 16,
       "price": 50,
@@ -53,8 +53,8 @@
     "model": "catalog.product",
     "pk": 7,
     "fields": {
-      "name": "вишня",
-      "description": "красная",
+      "name": "РІРёС€РЅСЏ",
+      "description": "РєСЂР°СЃРЅР°СЏ",
       "image": "",
       "category": 17,
       "price": 6,
@@ -66,8 +66,8 @@
     "model": "catalog.product",
     "pk": 8,
     "fields": {
-      "name": "яблоки",
-      "description": "сезонные",
+      "name": "СЏР±Р»РѕРєРё",
+      "description": "СЃРµР·РѕРЅРЅС‹Рµ",
       "image": "",
       "category": 17,
       "price": 11,
@@ -79,8 +79,8 @@
     "model": "catalog.product",
     "pk": 9,
     "fields": {
-      "name": "орео",
-      "description": "с шоколадом",
+      "name": "РѕСЂРµРѕ",
+      "description": "СЃ С€РѕРєРѕР»Р°РґРѕРј",
       "image": "",
       "category": 18,
       "price": 15,

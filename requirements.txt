@@ -2,3 +2,4 @@ Django
 ipython
 Pillow
 psycopg2
+pytils

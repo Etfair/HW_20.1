@@ -26,4 +26,4 @@ class Command(BaseCommand):
                 continue
 
         Product.objects.all().delete()
-        Product.objects.bulk_create(products_for_create)
+        # Product.objects.bulk_create(products_for_create)

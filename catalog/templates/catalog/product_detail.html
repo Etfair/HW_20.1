@@ -1,0 +1,41 @@
+{% extends 'catalog/includes/base.html' %}
+{% load my_tags %}
+{% block context %}
+    <div class="col-12">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            Информация
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tr>
+                                <td>Продукт</td>
+                                <td>{{ object.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Описание</td>
+                                <td>{{ object.description }}</td>
+                            </tr>
+                            <tr>
+                                <td>Цена</td>
+                                <td>{{ object.price }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                     <div class="btn-group">
+                         <a href="{% url 'update_product' object.pk %}" class="btn btn-primary active" aria-current="page">Редактировать</a>
+                         <a href="{% url 'delete_product' object.pk %}" class="btn btn-danger">Удалить</a>
+                     </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <img class="card-img-top" src="{{ object.image|mediapath }}"
+                    alt=""/>
+            </div>
+        </div>
+    </div>
+{% endblock %}

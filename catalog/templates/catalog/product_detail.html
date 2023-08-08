@@ -26,10 +26,18 @@
                             </tr>
                         </table>
                     </div>
-                     <div class="btn-group">
-                         <a href="{% url 'update_product' object.pk %}" class="btn btn-primary active" aria-current="page">Редактировать</a>
-                         <a href="{% url 'delete_product' object.pk %}" class="btn btn-danger">Удалить</a>
-                     </div>
+                    <div class="card-footer">
+                        <span class="text-muted">{{ object.owner|default:"Не привязано к пользователю" }}</span><br>
+                    </div>
+                    {% if not user.is_authenticated %}
+                        Данная запись доступна только зарегистрированным пользователям, войдите или
+                        зарегистрируйтесь.
+                    {% else %}
+                        <div class="btn-group">
+                             <a href="{% url 'update_product' object.pk %}" class="btn btn-primary active" aria-current="page">Редактировать</a>
+                             <a href="{% url 'delete_product' object.pk %}" class="btn btn-danger">Удалить</a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-6">

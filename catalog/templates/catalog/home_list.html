@@ -21,7 +21,13 @@
                     <a href="{% url 'view_product' object.pk %}" class="btn btn-lg btn-block btn-outline-primary">Информация</a>
                 </div>
                 <div class="card-footer">
-                    <h4 class="card-text">{{ object.last_vers }}</h4>
+                    {% if object.product_ver.exist %}
+                        {% for version in object.product_ver.all %}
+                            {% if version.is_active %}
+                                <small class="text-muted">Версия: {{ version.last_vers }}</small><br>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>

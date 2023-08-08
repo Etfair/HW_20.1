@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 # Create your models here.
@@ -12,6 +13,8 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name='Цена за покупку')
     date_create = models.DateTimeField(**NULLABLE, verbose_name='Дата создания')
     date_last_fix = models.DateTimeField(**NULLABLE, verbose_name='Дата последнего изменения')
+
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE, verbose_name='Пользователь')
 
     def __str__(self):
         return f'{self.name}\n Категория: {self.category} \nЦена: {self.price}'
@@ -34,7 +37,7 @@ class Category(models.Model):
 
 
 class Version(models.Model):
-    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='product_ver')
     number_vers = models.IntegerField(verbose_name='номер версии')
     name_vers = models.CharField(max_length=50, verbose_name='название версии')
     last_vers = models.BooleanField(default=True, verbose_name='признак текущей версии')

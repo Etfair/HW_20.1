@@ -1,35 +1,11 @@
 [
   {
-    "model": "catalog.category",
-    "pk": 16,
-    "fields": {
-      "name": "Заморозка",
-      "description": "Хранить в холодильнике"
-    }
-  },
-  {
-    "model": "catalog.category",
-    "pk": 17,
-    "fields": {
-      "name": "Фрукты и овощи",
-      "description": "Новый урожай"
-    }
-  },
-  {
-    "model": "catalog.category",
-    "pk": 18,
-    "fields": {
-      "name": "Сладкое",
-      "description": "Выпечка"
-    }
-  },
-  {
     "model": "catalog.product",
     "pk": 5,
     "fields": {
-      "name": "Пельмени",
-      "description": "говяжие",
-      "image": "",
+      "name": "????????",
+      "description": "???????",
+      "image": "catalog/pelmen.jpg",
       "category": 16,
       "price": 33,
       "date_create": "2023-07-14T17:26:44Z",
@@ -40,9 +16,9 @@
     "model": "catalog.product",
     "pk": 6,
     "fields": {
-      "name": "рыба",
-      "description": "мороженная",
-      "image": "",
+      "name": "????",
+      "description": "??????????",
+      "image": "catalog/????.png",
       "category": 16,
       "price": 50,
       "date_create": "2023-07-14T17:27:06Z",
@@ -53,9 +29,9 @@
     "model": "catalog.product",
     "pk": 7,
     "fields": {
-      "name": "вишня",
-      "description": "красная",
-      "image": "",
+      "name": "?????",
+      "description": "???????",
+      "image": "catalog/cherries.png",
       "category": 17,
       "price": 6,
       "date_create": "2023-07-14T17:27:28Z",
@@ -66,9 +42,9 @@
     "model": "catalog.product",
     "pk": 8,
     "fields": {
-      "name": "яблоки",
-      "description": "сезонные",
-      "image": "",
+      "name": "??????",
+      "description": "????????",
+      "image": "catalog/??????.png",
       "category": 17,
       "price": 11,
       "date_create": "2023-07-14T17:27:45Z",
@@ -79,13 +55,120 @@
     "model": "catalog.product",
     "pk": 9,
     "fields": {
-      "name": "орео",
-      "description": "с шоколадом",
-      "image": "",
+      "name": "????",
+      "description": "? ?????????",
+      "image": "catalog/oreo.jpg",
       "category": 18,
       "price": 15,
       "date_create": "2023-07-14T17:28:09Z",
       "date_last_fix": "2023-07-14T17:28:11Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "name": "???????",
+      "description": "????",
+      "image": "catalog/?????.png",
+      "category": 16,
+      "price": 55,
+      "date_create": "2023-07-30T00:00:00Z",
+      "date_last_fix": "2023-07-31T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 16,
+    "fields": {
+      "name": "?????????",
+      "description": "??????? ? ????????????"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 17,
+    "fields": {
+      "name": "?????? ? ?????",
+      "description": "????? ??????"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 18,
+    "fields": {
+      "name": "???????",
+      "description": "???????"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product": 9,
+      "number_vers": 1,
+      "name_vers": "??????????",
+      "last_vers": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 2,
+    "fields": {
+      "product": 5,
+      "number_vers": 2,
+      "name_vers": "?????? ????",
+      "last_vers": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 3,
+    "fields": {
+      "product": 9,
+      "number_vers": 2,
+      "name_vers": "?????????",
+      "last_vers": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 4,
+    "fields": {
+      "product": 10,
+      "number_vers": 1,
+      "name_vers": "????????",
+      "last_vers": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 5,
+    "fields": {
+      "product": 7,
+      "number_vers": 1,
+      "name_vers": "????????",
+      "last_vers": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 6,
+    "fields": {
+      "product": 6,
+      "number_vers": 1,
+      "name_vers": "??????",
+      "last_vers": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 7,
+    "fields": {
+      "product": 8,
+      "number_vers": 1,
+      "name_vers": "????? ??????",
+      "last_vers": true
     }
   }
 ]

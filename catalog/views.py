@@ -1,5 +1,4 @@
 from django.forms import inlineformset_factory
-from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
@@ -19,6 +18,12 @@ class ProductCreateView(CreateView):
 
     def get_success_url(self):
         return reverse('view_product', args=[self.object.pk])
+
+    def form_valid(self, form):
+        self.object = form.save()
+        self.object.owner = self.request.user
+
+        return super().form_valid(form)
 
 
 class ProductUpdateView(UpdateView):

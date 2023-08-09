@@ -34,10 +34,10 @@ class RegisterView(CreateView):
         verify_url = reverse('users:verify_email', args=[user.rnd_key])
         verify_link = self.request.build_absolute_uri(verify_url)
         send_mail(
-            'Подтвердите свой электронный адрес',
-            f'Пожалуйста, перейдите по следующей ссылке, чтобы подтвердить свой адрес электронной почты: {verify_link}',
-            'test',
-            [user.email],
+            subject='Подтвердите свой электронный адрес',
+            message=f'Пожалуйста, перейдите по следующей ссылке, чтобы подтвердить свой адрес электронной почты: {verify_link}',
+            from_email='Unfearble@yandex.ru',
+            recipient_list=[user.email, ],
             fail_silently=False
         )
         return super().form_valid(form)

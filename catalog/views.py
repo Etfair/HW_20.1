@@ -83,6 +83,9 @@ class ProductDetailView(DetailView):
 
 class ProductDeleteView(DeleteView):
     model = Product
-    success_url = reverse_lazy('catalog/home_list.html')
+
+    def get_success_url(self):
+        return reverse('product')
+
 
 

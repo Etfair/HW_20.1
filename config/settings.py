@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'catalog',
     'blog',
     'users',
+
+
 ]
 
 MIDDLEWARE = [
@@ -54,9 +56,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'config.urls'
+
 
 TEMPLATES = [
     {
@@ -137,8 +141,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+DEFAULT_FROM_EMAIL = 'Unfearble@yandex.ru'
 AUTH_USER_MODEL = 'users.User'
+LOGIN_URL = '/users/login'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -146,5 +151,7 @@ LOGOUT_REDIRECT_URL = '/'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'Unfearble@yandex.ru'
-EMAIL_HOST_PASSWORD = 'hzpduzkbanrbbvte'
+EMAIL_HOST_PASSWORD = 'gfovsgfmiaxsuvvl'
 EMAIL_USE_SSL = True
+
+SITE_ID = 1

@@ -18,7 +18,11 @@
                     alt=""/>
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                     </ul>
-                    <a href="{% url 'view_product' object.pk %}" class="btn btn-lg btn-block btn-outline-primary">Информация</a>
+                    {% if not user.is_authenticated %}
+                        Для просмотра товара необходимо войти или зарегистрироваться.
+                    {% else %}
+                        <a href="{% url 'view_product' object.pk %}" class="btn btn-lg btn-block btn-outline-primary">Информация</a>
+                    {% endif %}
                 </div>
                 <div class="card-footer">
                     {% if object.product_ver.exist %}

@@ -12,5 +12,8 @@ class User(AbstractUser):
     phone = models.CharField(max_length=35, verbose_name='номер телефона', **NULLABLE)
     country = models.TextField(verbose_name='страна')
 
+    is_active = models.BooleanField(default=False)
+    rnd_key = models.IntegerField(default=0, verbose_name='ключ для верификации')
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

@@ -3,4 +3,5 @@ ipython
 Pillow
 psycopg2
 pytils
-django-user-accounts
+python-dotenv
+redis

@@ -6,10 +6,7 @@
             <div class="col-4">
                 <div class="card">
                     <div class="card-body">
-                        {% if not user.is_authenticated %}
-                            Данная запись доступна только зарегистрированным пользователям, войдите или
-                            зарегистрируйтесь.
-                        {% else %}
+                        {% if perms.catalog.change_product %}
                             {% csrf_token %}
                             {{ form.as_p }}
                             <button type="submit" class="btn btn-success">

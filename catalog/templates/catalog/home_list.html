@@ -1,9 +1,11 @@
 {% extends 'catalog/includes/base.html' %}
 {% load my_tags %}
 {% block context %}
+{% if perms.catalog.add_product %}
 <div class="col-12 mb-3">
     <a class="btn btn-secondary" href="{% url 'create_product' %}">Добавить продукт</a>
 </div>
+{% endif %}
 {% for object in object_list %}
         <div class="col-3">
             <div class="card mb-4 box-shadow">
@@ -25,15 +27,15 @@
                     {% endif %}
                 </div>
                 <div class="card-footer">
-                    {% if object.product_ver.exist %}
-                        {% for version in object.product_ver.all %}
-                            {% if version.is_active %}
-                                <small class="text-muted">Версия: {{ version.last_vers }}</small><br>
+                    <ul>
+                        {% for subject in object.product_ver.all %}
+                            {% if subject.last_vers == True %}
+                                <li> Текущая версия продукта активна</li>
                             {% endif %}
                         {% endfor %}
-                    {% endif %}
+                    </ul>
                 </div>
             </div>
         </div>
-        {% endfor %}
+{% endfor %}
 {% endblock %}
